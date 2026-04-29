@@ -1,0 +1,373 @@
+version: 0.1.0
+url: http://192.168.0.230
+
+nodes: 
+    - name: program
+      category: administrative
+      description: ""
+      properties:
+        - name: dbgap_accession_number
+          description: "the db gap accession number"
+          type: string
+        - name: name
+          description: "the name of the node in the database"
+          type: string
+        - name: data_submitter_id
+          description: " a human-readable unique identifier for a record in the metadata database"
+          type: string
+        - name: program_name
+          description: "The name of the program"
+          type: string
+    - name: project
+      category: administrative
+      description: "the sub project within a given program"
+      properties:
+        - name: availability_type
+          description: "the hardcoded availability type"
+          type: string
+        - name: dbgap_accession_number
+          description: "the db gap accession number"
+          type: string
+        - name: node_name
+          description: "the name of the node in the database"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifier for a record in the metadata database"
+          type: string
+        - name: code
+          description: "unique identifier for the project"
+          type: string
+        - name: program_name
+          description: "the program the data source belongs to; the parent node"
+          type: string
+        - name: project_name
+          description: "the name of the project"
+          type: string
+        - name: location
+          description: "the location of the project"
+          type: string
+        - name: collaborators
+          description: "List of collaborators"
+          type: array
+        - name : contributor
+          type : string 
+          description : ""
+    - name: publication
+      category: administrative
+      description: ""
+      properties: 
+        - name: node_name
+          description: "the name of the node in the database"
+          type: string
+        - name: project_name
+          description: "the project the data belongs to; the parent node"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type: string
+        - name: article_name
+          description: "the name of the publication article"
+          type: string
+        - name: journal_name
+          description: "journal published in"
+          type: string
+        - name : date
+          description: "date of the publication"
+          type: number
+        - name : author
+          description: "list of authors"
+          type : array
+        - name : issue
+          description: "journal issue"
+          type : integer
+        - name : year
+          description: "year published"
+          type : integer
+        - name : number
+          description : "issue number"
+          type : integer 
+    - name: study
+      category: administrative
+      description: "the specific scientific study done within a project"
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name: project_name
+          description: "the project the data belongs to; the parent node"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type: string
+        - name: study_name
+          description: "name of the study"
+          type: string
+        - name: data_source
+          description: "source of the data. options are: simulation or experiment"
+          type: string
+    - name: run
+      category: administrative 
+      description: ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : study_name
+          description: "name of the study"
+          type: string
+        - name : run_name
+          description: "name of the run"
+          type: string
+        - name : date
+          description: "date of the run"
+          type : number
+        - name : run_number
+          description: the run number
+          type : integer  
+    - name: beamline
+      category: experimental_methods
+      description: ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : run_name
+          description: "name of the run"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type: string
+        - name: beamline_name
+          description: "name of the beamline"
+          type: string
+        - name: particle
+          description: "particles accelerated by this beamline"
+          type: string
+        - name : laboratory
+          description: "the laboratory where the beamline is located"
+          type: string
+    - name : magnets
+      category: experimental_methods
+      description : "the magnets used to guide the beam"
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name: beamline_name
+          description: "name of the beamline"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type: string
+        - name: magnet_name
+          description: "the name of the magnet"
+          type: string
+        - name : magnet_type
+          description: "the type of magnet"
+          type: string
+        - name: dimensions
+          description : "the dimensions of the magnet"
+          type : array
+        - name : location
+          description: "the location of the magnets within the beamline coordinate system"
+          type : array
+    - name: cavities
+      category: experimental_methods
+      description: ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name: beamline_name
+          description: "name of the beamline"
+          type: string
+        - name: data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type: string
+        - name: cavity_name
+          description : "name of the cavity"
+          type : string
+        - name : cavity_type
+          description : "the type of the cavity"
+          type : string
+        - name : dimensions
+          description : "the dimensions of the cavity"
+          type: array
+        - name : location
+          description : "the location within the beamline coordinate system"
+          type : array
+    - name: detectors
+      category: experimental_methods
+      description: "the detectors and sensors on the beamline"
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : run_name
+          description : "the date the run belongs to; the parent node"
+          type : string
+        - name : data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type : string
+        - name : detector_type 
+          description : "the type of detector"
+          type : string
+        - name : dimensions 
+          description : "the dimensions of the active volume"
+          type : array
+        - name : location
+          description : "the location within the beamline coordinate system"
+          type : array
+    - name: primary_beam
+      category: experimental_methods
+      description : ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : run_name
+          description : "the date the run belongs to; the parent node"
+          type : string
+        - name : data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type : string
+        - name : beam_name
+          description : "name of the primary beam"
+          type : string
+        - name : particle 
+          description : "PDGID particle number"
+          type : integer
+        - name : energy
+          description : " the beam energy"
+          type : number
+        - name : current
+          description : "the beam current"
+          type : number
+    - name: raw_file
+      category: data_file
+      description: ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : parent_name
+          type : string
+          description : " the node the data source belongs to; the parent node"
+        - name : data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type : string
+        - name : file_name 
+          description : "name of the data file"
+          type : string
+        - name : format
+          description : "the format of the data file"
+          type: "string"
+        - name : size
+          description : " the size of the file in bytes"
+          type: integer
+    - name: recon_file
+      category: data_file
+      description: ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : parent_name
+          type : string
+          description : " the node the data source belongs to; the parent node"
+        - name : data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type : string
+        - name : file_name 
+          description : "name of the data file"
+          type : string
+        - name : format
+          description : "the format of the data file"
+          type: "string"
+        - name : size
+          description : " the size of the file in bytes"
+          type : integer
+    - name: jsroot_file
+      category: data_file
+      description : ""
+      properties:
+        - name: node_name
+          type: string
+          description: "the name of the node in the database"
+        - name : parent_name
+          type : string
+          description : " the node the data source belongs to; the parent node"
+        - name : data_submitter_id
+          description: "a human-readable unique identifer for a record in the metadata database"
+          type : string
+        - name : file_name 
+          description : "name of the data file"
+          type : string
+        - name : size
+          description : " the size of the file in bytes"
+          type: integer
+links:
+    - parent: program
+      multiplicity: one_to_many
+      child: project
+    - parent: project
+      multiplicity: one_to_many
+      child: study
+    - parent : project
+      multiplicity : one_to_many
+      child: publication
+    - parent: study
+      multiplicity: one_to_many
+      child: run
+    - parent : run
+      multiplicity: many_to_one
+      child: beamline
+    - parent: beamline
+      multiplicity: one_to_many
+      child: magnets
+    - parent: beamline 
+      multiplicity: one_to_many
+      child : detectors
+    - parent: beamline
+      multiplicity: one_to_many
+      child: cavities
+    - parent: beamline
+      multiplicity: one_to_many
+      child: primary_beam
+    - parent: magnets
+      multiplicity: one_to_many
+      child : raw_file
+    - parent: magnets
+      multiplicity: one_to_many
+      child: recon_file
+    - parent: magnets
+      multiplicity: one_to_many
+      child: jsroot_file
+    - parent: cavities
+      multiplicity: one_to_many
+      child : raw_file
+    - parent: cavities
+      multiplicity: one_to_many
+      child: recon_file
+    - parent: cavities
+      multiplicity: one_to_many
+      child: jsroot_file
+    - parent: detectors
+      multiplicity: one_to_many
+      child : raw_file
+    - parent: detectors
+      multiplicity: one_to_many
+      child: recon_file
+    - parent: detectors
+      multiplicity: one_to_many
+      child: jsroot_file
+    - parent: primary_beam
+      multiplicity: one_to_many
+      child : raw_file
+    - parent: primary_beam
+      multiplicity: one_to_many
+      child: recon_file
+    - parent: primary_beam
+      multiplicity: one_to_many
+      child: jsroot_file
+
