@@ -12,12 +12,6 @@ nodes:
         - name: name
           description: "the name of the node in the database"
           type: string
-        - name: data_submitter_id
-          description: " a human-readable unique identifier for a record in the metadata database"
-          type: string
-        - name: program_name
-          description: "The name of the program"
-          type: string
     - name: project
       category: administrative
       description: "the sub project within a given program"
@@ -28,30 +22,22 @@ nodes:
         - name: dbgap_accession_number
           description: "the db gap accession number"
           type: string
+        - name: code
+          description: "the unique id of the data used for linking"
+          type: string
+    - name: study
+      category: administrative
+      description: "the specific scientific study done within a project"
+      properties:
         - name: node_name
+          type: string
           description: "the name of the node in the database"
+        - name: project_name
+          description: "the project the data belongs to; the parent node"
           type: string
         - name: data_submitter_id
-          description: "a human-readable unique identifier for a record in the metadata database"
           type: string
-        - name: code
-          description: "unique identifier for the project"
-          type: string
-        - name: program_name
-          description: "the program the data source belongs to; the parent node"
-          type: string
-        - name: project_name
-          description: "the name of the project"
-          type: string
-        - name: location
-          description: "the location of the project"
-          type: string
-        - name: collaborators
-          description: "List of collaborators"
-          type: array
-        - name : contributor
-          type : string 
-          description : ""
+          description: "a human-readable unique identifer for a record in the metadata database"
     - name: publication
       category: administrative
       description: ""
@@ -86,18 +72,6 @@ nodes:
         - name : number
           description : "issue number"
           type : integer 
-    - name: study
-      category: administrative
-      description: "the specific scientific study done within a project"
-      properties:
-        - name: node_name
-          type: string
-          description: "the name of the node in the database"
-        - name: project_name
-          description: "the project the data belongs to; the parent node"
-          type: string
-        - name: data_submitter_id
-          description: "a human-readable unique identifer for a record in the metadata database"
           type: string
         - name: study_name
           description: "name of the study"
