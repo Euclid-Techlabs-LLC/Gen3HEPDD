@@ -23,10 +23,10 @@ required:
 - submitter_id
 - type
 links:
-- name: projects
+- name: Projects
   backref: publications
   label: part_of
-  target_type: project
+  target_type: Project
   multiplicity: many_to_one
   required: true
 properties:
@@ -63,6 +63,6 @@ properties:
   number:
     type: integer
     description: issue number
-  projects:
+  Projects:
     $ref: _definitions.yaml#/to_one
 additionalProperties: false

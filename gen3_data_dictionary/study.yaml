@@ -23,10 +23,10 @@ required:
 - submitter_id
 - type
 links:
-- name: projects
+- name: Projects
   backref: studys
   label: part_of
-  target_type: project
+  target_type: Project
   multiplicity: many_to_one
   required: true
 properties:
@@ -46,6 +46,6 @@ properties:
   data_source:
     type: string
     description: 'source of the data. options are: simulation or experiment'
-  projects:
+  Projects:
     $ref: _definitions.yaml#/to_one
 additionalProperties: false

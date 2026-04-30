@@ -2,7 +2,7 @@ version: 0.1.0
 url: http://192.168.0.230
 
 nodes: 
-    - name: program
+    - name: Program
       category: administrative
       description: ""
       properties:
@@ -18,7 +18,7 @@ nodes:
         - name: program_name
           description: "The name of the program"
           type: string
-    - name: project
+    - name: Project
       category: administrative
       description: "the sub project within a given program"
       properties:
@@ -310,15 +310,15 @@ links:
     - name: programs
       backref: projects
       label: member_of
-      parent: program
-      child: project
+      parent: Program
+      child: Project
       target_type: program
       multiplicity: many_to_one
       required: true
-    - parent: project
+    - parent: Project
       multiplicity: one_to_many
       child: study
-    - parent : project
+    - parent : Project
       multiplicity : one_to_many
       child: publication
     - parent: study
