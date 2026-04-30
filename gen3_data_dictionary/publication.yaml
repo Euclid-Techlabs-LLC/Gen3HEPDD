@@ -61,14 +61,8 @@ properties:
     type: integer
     description: year published
   number:
-    type: string
+    type: integer
     description: issue number
-  study_name:
-    type: string
-    description: name of the study
-  data_source:
-    type: string
-    description: 'source of the data. options are: simulation or experiment'
   projects:
     $ref: _definitions.yaml#/to_one
 additionalProperties: false

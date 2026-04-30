@@ -37,9 +37,32 @@ properties:
   dbgap_accession_number:
     type: string
     description: the db gap accession number
+  node_name:
+    type: string
+    description: the name of the node in the database
+  data_submitter_id:
+    type: string
+    description: a human-readable unique identifier for a record in the metadata database
   code:
     type: string
-    description: the unique id of the data used for linking
+    description: unique identifier for the project
+  program_name:
+    type: string
+    description: the program the data source belongs to; the parent node
+  project_name:
+    type: string
+    description: the name of the project
+  location:
+    type: string
+    description: the location of the project
+  collaborators:
+    type: array
+    items:
+      type: string
+    description: List of collaborators
+  contributor:
+    type: string
+    description: ''
   programs:
     $ref: _definitions.yaml#/to_one
 additionalProperties: false
