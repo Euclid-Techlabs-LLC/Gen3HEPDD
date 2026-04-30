@@ -36,7 +36,7 @@ properties:
     description: the name of the node in the database
   project_name:
     type: string
-    description: the project the data belongs to; the parent node
+    description: the Project the data belongs to; the parent node
   data_submitter_id:
     type: string
     description: a human-readable unique identifer for a record in the metadata database

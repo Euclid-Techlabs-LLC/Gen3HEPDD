@@ -20,7 +20,7 @@ nodes:
           type: string
     - name: Project
       category: administrative
-      description: "the sub project within a given program"
+      description: "the sub Project within a given program"
       properties:
         - name: availability_type
           description: "the hardcoded availability type"
@@ -60,7 +60,7 @@ nodes:
           description: "the name of the node in the database"
           type: string
         - name: project_name
-          description: "the project the data belongs to; the parent node"
+          description: "the Project the data belongs to; the parent node"
           type: string
         - name: data_submitter_id
           description: "a human-readable unique identifer for a record in the metadata database"
@@ -94,7 +94,7 @@ nodes:
           type: string
           description: "the name of the node in the database"
         - name: project_name
-          description: "the project the data belongs to; the parent node"
+          description: "the Project the data belongs to; the parent node"
           type: string
         - name: data_submitter_id
           description: "a human-readable unique identifer for a record in the metadata database"
@@ -312,7 +312,7 @@ links:
       label: member_of
       parent: Program
       child: Project
-      target_type: program
+      target_type: Program
       multiplicity: many_to_one
       required: true
     - parent: Project
