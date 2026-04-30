@@ -307,9 +307,14 @@ nodes:
           description : " the size of the file in bytes"
           type: integer
 links:
-    - parent: program
-      multiplicity: one_to_many
+    - name: programs
+      backref: projects
+      label: member_of
+      parent: program
       child: project
+      target_type: program
+      multiplicity: many_to_one
+      required: true
     - parent: project
       multiplicity: one_to_many
       child: study
