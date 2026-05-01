@@ -35,16 +35,16 @@ nodes:
           description: "a human-readable unique identifier for a record in the metadata database"
           type: string
         - name: code
-          description: "unique identifier for the project"
+          description: "unique identifier for the Project"
           type: string
         - name: program_name
           description: "the program the data source belongs to; the parent node"
           type: string
-        - name: project_name
-          description: "the name of the project"
+        - name: Project_name
+          description: "the name of the Project"
           type: string
         - name: location
-          description: "the location of the project"
+          description: "the location of the Project"
           type: string
         - name: collaborators
           description: "List of collaborators"
@@ -59,7 +59,7 @@ nodes:
         - name: node_name
           description: "the name of the node in the database"
           type: string
-        - name: project_name
+        - name: Project_name
           description: "the Project the data belongs to; the parent node"
           type: string
         - name: data_submitter_id
@@ -88,12 +88,12 @@ nodes:
           type : integer 
     - name: study
       category: administrative
-      description: "the specific scientific study done within a project"
+      description: "the specific scientific study done within a Project"
       properties:
         - name: node_name
           type: string
           description: "the name of the node in the database"
-        - name: project_name
+        - name: Project_name
           description: "the Project the data belongs to; the parent node"
           type: string
         - name: data_submitter_id
@@ -308,7 +308,7 @@ nodes:
           type: integer
 links:
     - name: programs
-      backref: projects
+      backref: Projects
       label: member_of
       parent: Program
       child: Project

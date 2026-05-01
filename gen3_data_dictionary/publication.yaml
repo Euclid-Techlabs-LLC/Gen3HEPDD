@@ -34,7 +34,7 @@ properties:
   node_name:
     type: string
     description: the name of the node in the database
-  project_name:
+  Project_name:
     type: string
     description: the Project the data belongs to; the parent node
   data_submitter_id:
