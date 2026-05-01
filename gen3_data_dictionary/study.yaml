@@ -27,7 +27,7 @@ links:
   backref: studys
   label: part_of
   target_type: project
-  multiplicity: many_to_one
+  multiplicity: one_to_many
   required: true
 properties:
   $ref: _definitions.yaml#/ubiquitous_properties
@@ -47,5 +47,5 @@ properties:
     type: string
     description: 'source of the data. options are: simulation or experiment'
   projects:
-    $ref: _definitions.yaml#/to_one
+    $ref: _definitions.yaml#/to_many
 additionalProperties: false
