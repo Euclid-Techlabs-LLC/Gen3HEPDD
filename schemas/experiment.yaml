@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "study"
-title: Study
+id: "experiment"
+title: Experiment
 type: object
 namespace: http://bloodprofilingatlas.org/bpa/
 category: administrative
@@ -23,7 +23,7 @@ systemProperties:
 
 links:
   - name: projects
-    backref: studys
+    backref: experiments
     label: performed_for
     target_type: project 
     multiplicity: many_to_one
@@ -40,7 +40,7 @@ uniqueKeys:
 
 properties:
   type:
-    enum: [ "study" ]
+    enum: [ "experiment" ]
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
@@ -50,24 +50,24 @@ properties:
     type:
       - string
       - "null"
-  number_studyal_group:
-    description: "The number denoting this study's place within the group within the whole."
+  number_experimental_group:
+    description: "The number denoting this experiment's place within the group within the whole."
     type:
       - integer
-  number_samples_per_studyal_group:
-    description: "The number of samples contained within this studyal group."
+  number_samples_per_experimental_group:
+    description: "The number of samples contained within this experimental group."
     type:
       - integer
-  studyal_description:
-    description: "A brief description of the study being performed."
+  experimental_description:
+    description: "A brief description of the experiment being performed."
     type:
       - string
-  studyal_intent:
-    description: "Summary of the goals the study is designed to discover."
+  experimental_intent:
+    description: "Summary of the goals the experiment is designed to discover."
     type:
       - string
-  associated_study:
-    description: "The submitter_id for any study with which this experiment is associated, paired, or matched."
+  associated_experiment:
+    description: "The submitter_id for any experiment with which this experiment is associated, paired, or matched."
     type:
       - string
   type_of_sample:
@@ -75,20 +75,20 @@ properties:
     type:
       - string
   type_of_specimen:
-    description: "Broad description of the specimens used in the study."
+    description: "Broad description of the specimens used in the experiment."
     type:
       - string
   marker_panel_description:
-    description: "Brief description of the marker panel used in this study."
+    description: "Brief description of the marker panel used in this experiment."
     type: string
   somatic_mutations_identified:
-    description: "Are somatic mutations identified for this study?"
+    description: "Are somatic mutations identified for this experiment?"
     type: boolean
   indels_identified:
-    description: "Are indels identified in this study?"
+    description: "Are indels identified in this experiment?"
     type: boolean
   copy_numbers_identified:
-    description: "Are copy number variations identified in this study?"
+    description: "Are copy number variations identified in this experiment?"
     type: boolean
   type_of_data:
     description: "Is the data raw or processed?"
@@ -96,7 +96,7 @@ properties:
       - Raw
       - Processed
   data_description:
-    description: "Brief description of the data being provided for this study."
+    description: "Brief description of the data being provided for this experiment."
     type: string
   projects:
     $ref: "_definitions.yaml#/to_one_project"
