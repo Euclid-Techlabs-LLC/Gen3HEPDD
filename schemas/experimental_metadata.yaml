@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "studyal_metadata"
+id: "experimental_metadata"
 title: Experimental Metadata
 type: object
 namespace: http://gdc.nci.nih.gov
@@ -56,7 +56,7 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
   type:
-    enum: [ "studyal_metadata" ]
+    enum: [ "experimental_metadata" ]
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
