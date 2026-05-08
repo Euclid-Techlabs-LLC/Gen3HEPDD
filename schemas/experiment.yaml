@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
 id: "experiment"
-title: Experiment
+title: Studies
 type: object
 namespace: http://bloodprofilingatlas.org/bpa/
 category: administrative
