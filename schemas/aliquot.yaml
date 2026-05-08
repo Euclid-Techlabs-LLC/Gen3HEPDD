@@ -31,7 +31,7 @@ uniqueKeys:
 
 links:
   - name: cases
-    backref: samples
+    backref: aliquots
     label: derived_from
     target_type: case
     multiplicity: many_to_one #not sure
