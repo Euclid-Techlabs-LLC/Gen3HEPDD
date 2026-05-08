@@ -41,12 +41,6 @@ links:
           target_type: aliquot
           multiplicity: one_to_one
           required: false
-        - name: read_groups
-          backref: submitted_copy_number_files
-          label: derived_from
-          target_type: read_group
-          multiplicity: many_to_many
-          required: false
 
 required:
   - submitter_id
@@ -85,7 +79,5 @@ properties:
     type: string 
   aliquots:
     $ref: "_definitions.yaml#/to_one"
-  read_groups:
-    $ref: "_definitions.yaml#/to_many"
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_many"
