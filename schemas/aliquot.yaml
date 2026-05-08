@@ -30,11 +30,11 @@ uniqueKeys:
   - [project_id, submitter_id]
 
 links:
-  - name: samples
-    backref: aliquots
+  - name: cases
+    backref: samples
     label: derived_from
-    multiplicity: many_to_many
-    target_type: sample
+    target_type: case
+    multiplicity: many_to_one #not sure
     required: true
 
 constraints: null
