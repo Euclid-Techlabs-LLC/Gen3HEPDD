@@ -7,7 +7,7 @@ category: biospecimen
 program: '*'
 project: '*'
 description: >
-  Pertaining to a portion of the whole; any one of two or more samples of something, of the same
+  Pertaining to a portion of the whole; any one of two or more cases of something, of the same
   volume or weight.
 additionalProperties: false
 submittable: true
@@ -23,7 +23,8 @@ systemProperties:
 required:
   - submitter_id
   - type
-  - samples
+  - cases
+
 
 uniqueKeys:
   - [id]
@@ -95,7 +96,7 @@ properties:
     term:
       $ref: "_terms.yaml#/source_center"
     type: string
-  samples:
+  cases:
     $ref: "_definitions.yaml#/to_one"
   created_datetime:
     $ref: "_definitions.yaml#/datetime"
