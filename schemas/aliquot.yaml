@@ -34,7 +34,7 @@ links:
     backref: aliquots
     label: derived_from
     target_type: case
-    multiplicity: many_to_one #not sure
+    multiplicity: many_to_many #not sure
     required: true
 
 constraints: null
