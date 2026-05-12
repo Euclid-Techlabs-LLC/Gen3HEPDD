@@ -60,7 +60,7 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
   type:
-    enum: [ "submitted_copy_number" ]
+    enum: [ "jsroot_data_file" ]
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
