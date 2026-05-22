@@ -39,7 +39,7 @@ links:
           backref: jsroot_data_files
           label: derived_from
           target_type: aliquot
-          multiplicity: one_to_one
+          multiplicity: many_to_one
           required: false
 
 required:
