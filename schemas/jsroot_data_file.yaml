@@ -52,7 +52,8 @@ required:
   - data_category
   - data_type
   - experimental_strategy
-
+  - energy_min
+  - energy_max
 uniqueKeys:
   - [ id ]
   - [ project_id, submitter_id ]
