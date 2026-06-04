@@ -52,8 +52,7 @@ required:
   - data_category
   - data_type
   - experimental_strategy
-  - energy_min
-  - energy_max
+
 uniqueKeys:
   - [ id ]
   - [ project_id, submitter_id ]
@@ -81,6 +80,30 @@ properties:
   energy_min:
     type: number 
   energy_max:
+    type: number
+  x_min:
+    type: number 
+  x_max:
+    type: number
+  y_min:
+    type: number 
+  y_max:
+    type: number
+  z_min:
+    type: number 
+  z_max:
+    type: number
+  px_min:
+    type: number 
+  px_max:
+    type: number
+  py_min:
+    type: number 
+  py_max:
+    type: number
+  pz_min:
+    type: number 
+  pz_max:
     type: number
   aliquots:
     $ref: "_definitions.yaml#/to_one"
