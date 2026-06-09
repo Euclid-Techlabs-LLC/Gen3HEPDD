@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "program"
-title: Program
+id: "data_type"
+title: Data Type
 type: object
 namespace: https://gdc.cancer.gov
-category: administrative
+category: TBD
 project: '*'
 program: '*'
 description: >-
-  A broad framework of goals to be achieved. (NCIt C52647)
+  Data type of a legacy file (deprecated).
 additionalProperties: false
 submittable: false
 downloadable: false
@@ -22,11 +22,9 @@ links: []
 
 required:
   - name
-  - dbgap_accession_number
 
 uniqueKeys:
   - [id]
-  - [name]
 
 properties:
 
@@ -39,10 +37,5 @@ properties:
 
   name:
     description: >-
-      Full name/title of the program.
-    type: string
-
-  dbgap_accession_number:
-    description: >-
-      The dbgap accession number provided for the program.
+      name of this data type
     type: string

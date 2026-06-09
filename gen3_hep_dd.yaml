@@ -308,10 +308,10 @@ nodes:
           type: integer
 links:
     - parent: program
-      multiplicity: one_to_many
+      multiplicity: many_to_one
       child: project
     - parent: project
-      multiplicity: one_to_many
+      multiplicity: many_to_one
       child: study
     - parent : project
       multiplicity : one_to_many
